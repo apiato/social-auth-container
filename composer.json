@@ -4,6 +4,7 @@
     "type": "apiato-container",
     "require": {
     },
+    "license": "MIT",
     "extra": {
         "apiato": {
             "container": {
