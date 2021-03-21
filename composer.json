@@ -1,6 +1,6 @@
 {
     "name": "mohammad-alavi/apiato-social-auth",
-    "description": "Adds the social authentication functionality using Laravel Socialite",
+    "description": "An Apiato container which adds social authentication functionality using Laravel Socialite",
     "type": "apiato-container",
     "require": {
     },
