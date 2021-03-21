@@ -1,0 +1,14 @@
+{
+    "name": "mohammad-alavi/apiato-social-auth",
+    "description": "Adds the social authentication functionality using Laravel Socialite",
+    "type": "apiato-container",
+    "require": {
+    },
+    "extra": {
+        "apiato": {
+            "container": {
+                "name": "SocialAuth"
+            }
+        }
+    }
+}
