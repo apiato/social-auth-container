@@ -6,7 +6,6 @@ use Apiato\Core\Foundation\Facades\Apiato;
 use App\Containers\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
 use App\Containers\User\UI\API\Transformers\UserTransformer;
 use App\Ship\Parents\Controllers\ApiController;
-use App\Ship\Transporters\DataTransporter;
 
 class Controller extends ApiController
 {
