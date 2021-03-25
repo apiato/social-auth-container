@@ -71,7 +71,7 @@ class SocialLoginAction extends Action
 		}
 
 		// Authenticate the user from its object
-		$personalAccessTokenResult = Apiato::call('Authentication@ApiLoginFromUserTask', [$user]);
+		$personalAccessTokenResult = Apiato::call('SocialAuth@ApiLoginFromUserTask', [$user]);
 
 		return [
 			'user' => $user,
