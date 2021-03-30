@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Containers\SocialAuth\Tasks;
+namespace App\Modules\SocialAuth\Tasks;
 
-use App\Containers\SocialAuth\Exceptions\AccountFailedException;
+use App\Modules\SocialAuth\Exceptions\AccountFailedException;
 use App\Containers\User\Data\Repositories\UserRepository;
 use App\Ship\Parents\Tasks\Task;
 use Exception;
