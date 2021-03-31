@@ -7,6 +7,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AccountFailedException extends Exception
 {
-	public $httpStatusCode = Response::HTTP_CONFLICT;
-	public $message = 'Failed creating a new User for Social Authentication.';
+	protected $code = Response::HTTP_CONFLICT;
+	protected $message = 'Failed creating a new User for Social Authentication.';
 }
