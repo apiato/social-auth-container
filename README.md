@@ -119,7 +119,7 @@ oauth_token=121212121-121212121&oauth_secret=34343434343434343343434343
 
 Note: For Facebook send only the `oauth_token` which is named as `access_token` in the facebook response. For more
 details about the parameters checkout the generated documentation or
-visit `app/Containers/Socialauth/UI/API/Routes/AuthenticateAll.v1.private.php`
+visit `app/Modules/Socialauth/UI/API/Routes/AuthenticateAll.v1.private.php`
 
 5) The endpoint above should return the User and his Personal Access Token.
 
@@ -165,4 +165,4 @@ Example Twitter Response:
 
 1) Pick an Auth Provider from the supported providers by [Socialite](https://socialiteproviders.github.io/).
 
-2) Go to `app/Containers/Socialauth/Tasks/FindUserSocialProfileTask.php` and support your provider.
+2) Go to `app/Modules/Socialauth/Tasks/FindUserSocialProfileTask.php` and support your provider.
