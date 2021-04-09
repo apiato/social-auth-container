@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Contaienrs\VendorSection\SocialAuth\Actions;
+namespace App\Containers\VendorSection\SocialAuth\Actions;
 
 use Apiato\Core\Foundation\Facades\Apiato;
-use App\Contaienrs\VendorSection\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
+use App\Containers\VendorSection\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
 use App\Ship\Parents\Actions\Action;
 use Illuminate\Support\Facades\Config;
 

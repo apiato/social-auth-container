@@ -1,6 +1,6 @@
 <?php
 
-use App\Contaienrs\VendorSection\SocialAuth\UI\WEB\Controllers\Controller;
+use App\Containers\VendorSection\SocialAuth\UI\WEB\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 // provider callback handler

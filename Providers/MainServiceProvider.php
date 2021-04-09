@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contaienrs\VendorSection\SocialAuth\Providers;
+namespace App\Containers\VendorSection\SocialAuth\Providers;
 
 use App\Ship\Parents\Providers\MainProvider;
 
