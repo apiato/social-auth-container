@@ -1,7 +1,9 @@
-# Social Authentication [Apiato](https://github.com/apiato/apiato) Container
+# [Apiato](https://github.com/apiato/apiato) Social Authentication Container
 
 An Apiato container which adds social authentication functionality using Laravel
 Socialite
+
+
 
 - [Installation](#installation)
 - [Default Supported Auth Provide](#default-supported-auth-provide)
@@ -20,8 +22,18 @@ Add this to your  `app/composer.json` then run `composer update`
 ```
 "mohammad-alavi/apiato-social-auth": "^2.0.0"
 ```
+Now run `php artisan migrate`
 
-This container will be installed in `app/Modules/SocialAuth`
+And optionally add this to your user transformer to add social auth fields to your user repsonses:
+```php
+'social_auth_provider' => $user->social_provider,
+    'social_nickname' => $user->social_nickname,
+    'social_id' => $user->social_id,
+    'social_avatar' => [
+        'avatar' => $user->social_avatar,
+        'original' => $user->social_avatar_original,
+```
+
 
 <a name="default-supported-auth-provide"></a>
 
@@ -119,7 +131,7 @@ oauth_token=121212121-121212121&oauth_secret=34343434343434343343434343
 
 Note: For Facebook send only the `oauth_token` which is named as `access_token` in the facebook response. For more
 details about the parameters checkout the generated documentation or
-visit `app/Modules/Socialauth/UI/API/Routes/AuthenticateAll.v1.private.php`
+visit `app/Containers/VendorSection/Socialauth/UI/API/Routes/AuthenticateAll.v1.private.php`
 
 5) The endpoint above should return the User and his Personal Access Token.
 
@@ -163,6 +175,6 @@ Example Twitter Response:
 
 ## Support new Auth Provider
 
-1) Pick an Auth Provider from the supported providers by [Socialite](https://socialiteproviders.github.io/).
-
-2) Go to `app/Modules/Socialauth/Tasks/FindUserSocialProfileTask.php` and support your provider.
+1) Copy the container from `VendorSection` to a section of your project and fix the namespaces.
+2) Pick an Auth Provider from the supported providers by [Socialite](https://socialiteproviders.github.io/).
+2) Go to `app/Containers/YourSection/Socialauth/Tasks/FindUserSocialProfileTask.php` and support your provider.
