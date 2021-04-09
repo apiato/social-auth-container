@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Modules\SocialAuth\UI\API\Controllers;
+namespace App\Contaienrs\VendorSection\SocialAuth\UI\API\Controllers;
 
 use Apiato\Core\Foundation\Facades\Apiato;
-use App\Modules\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
+use App\Contaienrs\VendorSection\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
 use App\Containers\User\UI\API\Transformers\UserTransformer;
 use App\Ship\Parents\Controllers\ApiController;
 

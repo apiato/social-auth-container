@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\SocialAuth\UI\WEB\Controllers;
+namespace App\Contaienrs\VendorSection\SocialAuth\UI\WEB\Controllers;
 
 use App\Ship\Parents\Controllers\WebController;
 use Laravel\Socialite\Contracts\User;

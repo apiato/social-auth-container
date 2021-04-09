@@ -1,6 +1,6 @@
 <?php
 
-use App\Modules\SocialAuth\UI\WEB\Controllers\Controller;
+use App\Contaienrs\VendorSection\SocialAuth\UI\WEB\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 // provider login redirect (WEB)

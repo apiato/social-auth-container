@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\SocialAuth\UI\API\Requests;
+namespace App\Contaienrs\VendorSection\SocialAuth\UI\API\Requests;
 
 use App\Ship\Parents\Requests\Request;
 
