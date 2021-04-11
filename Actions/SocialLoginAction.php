@@ -3,6 +3,11 @@
 namespace App\Containers\VendorSection\SocialAuth\Actions;
 
 use Apiato\Core\Foundation\Facades\Apiato;
+use App\Containers\VendorSection\SocialAuth\Tasks\ApiLoginFromUserTask;
+use App\Containers\VendorSection\SocialAuth\Tasks\CreateUserBySocialProfileTask;
+use App\Containers\VendorSection\SocialAuth\Tasks\FindSocialUserTask;
+use App\Containers\VendorSection\SocialAuth\Tasks\FindUserSocialProfileTask;
+use App\Containers\VendorSection\SocialAuth\Tasks\UpdateUserSocialProfileTask;
 use App\Containers\VendorSection\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
 use App\Ship\Parents\Actions\Action;
 use Illuminate\Support\Facades\Config;
@@ -21,10 +26,10 @@ class SocialLoginAction extends Action
 	{
 		$provider = $data->provider;
 		// fetch the user data from the support platforms
-		$socialUserProfile = Apiato::call('SocialAuth@FindUserSocialProfileTask', [$provider, $data->all()]);
+		$socialUserProfile = Apiato::call(FindUserSocialProfileTask::class, [$provider, $data->all()]);
 
 		// check if the social ID exist on any of our users, and get that user in case it was found
-		$socialUser = Apiato::call('SocialAuth@FindSocialUserTask', [$provider, $socialUserProfile->id]);
+		$socialUser = Apiato::call(FindSocialUserTask::class, [$provider, $socialUserProfile->id]);
 
 		// checking if some data are available in the response
 		// (these lines are written to make this function compatible with multiple providers)
@@ -39,7 +44,7 @@ class SocialLoginAction extends Action
 			// DO: UPDATE THE EXISTING USER SOCIAL PROFILE.
 
 			// Only update tokens and updated information. Never override the user profile.
-			$user = Apiato::call('SocialAuth@UpdateUserSocialProfileTask', [
+			$user = Apiato::call(UpdateUserSocialProfileTask::class, [
 				$socialUser->id,
 				$socialUserProfile->token,
 				$expiresIn,
@@ -54,7 +59,7 @@ class SocialLoginAction extends Action
 			$isAdmin = Config::get('socialAuth-container.create_new_user_as_admin');
 
 			// DO: CREATE NEW USER FROM THE SOCIAL PROFILE INFORMATION.
-			$user = Apiato::call('SocialAuth@CreateUserBySocialProfileTask', [
+			$user = Apiato::call(CreateUserBySocialProfileTask::class, [
 				$provider,
 				$socialUserProfile->token,
 				$socialUserProfile->id,
@@ -71,7 +76,7 @@ class SocialLoginAction extends Action
 		}
 
 		// Authenticate the user from its object
-		$personalAccessTokenResult = Apiato::call('SocialAuth@ApiLoginFromUserTask', [$user]);
+		$personalAccessTokenResult = Apiato::call(ApiLoginFromUserTask::class, [$user]);
 
 		return [
 			'user' => $user,
