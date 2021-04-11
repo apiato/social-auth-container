@@ -3,7 +3,11 @@
 An Apiato container which adds social authentication functionality using Laravel
 Socialite
 
+#### Compatiblity table
 
+| Container Version  | Apiato Version|
+| -------------------|---------------|
+| `^2.*.*`           | `^10.*.*`     |
 
 - [Installation](#installation)
 - [Default Supported Auth Provide](#default-supported-auth-provide)
@@ -17,10 +21,8 @@ Under the hood this container uses [Laravel Socialite](https://github.com/larave
 
 ## Installation
 
-Add this to your  `app/composer.json` then run `composer update`
-
 ```
-"mohammad-alavi/apiato-social-auth": "^2.0.0"
+composer require apiato/social-auth-container
 ```
 Now run `php artisan migrate`
 
