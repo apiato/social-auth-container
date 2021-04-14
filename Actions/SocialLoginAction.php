@@ -2,7 +2,6 @@
 
 namespace App\Containers\VendorSection\SocialAuth\Actions;
 
-use Apiato\Core\Foundation\Facades\Apiato;
 use App\Containers\VendorSection\SocialAuth\Tasks\ApiLoginFromUserTask;
 use App\Containers\VendorSection\SocialAuth\Tasks\CreateUserBySocialProfileTask;
 use App\Containers\VendorSection\SocialAuth\Tasks\FindSocialUserTask;
@@ -10,7 +9,6 @@ use App\Containers\VendorSection\SocialAuth\Tasks\FindUserSocialProfileTask;
 use App\Containers\VendorSection\SocialAuth\Tasks\UpdateUserSocialProfileTask;
 use App\Containers\VendorSection\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
 use App\Ship\Parents\Actions\Action;
-use Illuminate\Support\Facades\Config;
 
 class SocialLoginAction extends Action
 {
@@ -19,17 +17,17 @@ class SocialLoginAction extends Action
 	 * --------- [A] update his social profile info
 	 * ----- if has no social profile
 	 * --------- [C] create new record
-	 * @param ApiAuthenticateRequest $data
+	 * @param ApiAuthenticateRequest $request
 	 * @return array
 	 */
-	public function run(ApiAuthenticateRequest $data): array
+	public function run(ApiAuthenticateRequest $request): array
 	{
-		$provider = $data->provider;
+		$provider = $request->provider;
 		// fetch the user data from the support platforms
-		$socialUserProfile = Apiato::call(FindUserSocialProfileTask::class, [$provider, $data->all()]);
+		$socialUserProfile = app(FindUserSocialProfileTask::class)->run($provider, $request->all());
 
 		// check if the social ID exist on any of our users, and get that user in case it was found
-		$socialUser = Apiato::call(FindSocialUserTask::class, [$provider, $socialUserProfile->id]);
+		$socialUser = app(FindSocialUserTask::class)->run($provider, $socialUserProfile->id);
 
 		// checking if some data are available in the response
 		// (these lines are written to make this function compatible with multiple providers)
@@ -44,7 +42,7 @@ class SocialLoginAction extends Action
 			// DO: UPDATE THE EXISTING USER SOCIAL PROFILE.
 
 			// Only update tokens and updated information. Never override the user profile.
-			$user = Apiato::call(UpdateUserSocialProfileTask::class, [
+			$user = app(UpdateUserSocialProfileTask::class)->run(
 				$socialUser->id,
 				$socialUserProfile->token,
 				$expiresIn,
@@ -52,14 +50,14 @@ class SocialLoginAction extends Action
 				$tokenSecret,
 				$socialUserProfile->avatar,
 				$avatar_original
-			]);
+			);
 		} else {
 			// THIS IS: A NEW USER
 
-			$isAdmin = Config::get('socialAuth-container.create_new_user_as_admin');
+			$isAdmin = config('vendorSection-socialAuth.create_new_user_as_admin');
 
 			// DO: CREATE NEW USER FROM THE SOCIAL PROFILE INFORMATION.
-			$user = Apiato::call(CreateUserBySocialProfileTask::class, [
+			$user = app(CreateUserBySocialProfileTask::class)->run(
 				$provider,
 				$socialUserProfile->token,
 				$socialUserProfile->id,
@@ -72,11 +70,11 @@ class SocialLoginAction extends Action
 				$refreshToken,
 				$avatar_original,
 				$isAdmin
-			]);
+			);
 		}
 
 		// Authenticate the user from its object
-		$personalAccessTokenResult = Apiato::call(ApiLoginFromUserTask::class, [$user]);
+		$personalAccessTokenResult = app(ApiLoginFromUserTask::class)->run($user);
 
 		return [
 			'user' => $user,
