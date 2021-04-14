@@ -3,7 +3,11 @@
 An Apiato container which adds social authentication functionality using Laravel
 Socialite
 
+#### Compatibility table
 
+| Container Version  | Apiato Version|
+| -------------------|---------------|
+| `^2.*.*`           | `^10.*.*`     |
 
 - [Installation](#installation)
 - [Default Supported Auth Provide](#default-supported-auth-provide)
@@ -17,10 +21,8 @@ Under the hood this container uses [Laravel Socialite](https://github.com/larave
 
 ## Installation
 
-Add this to your  `app/composer.json` then run `composer update`
-
 ```
-"mohammad-alavi/apiato-social-auth": "^2.0.0"
+composer require apiato/social-auth-container
 ```
 Now run `php artisan migrate`
 
@@ -66,28 +68,21 @@ And optionally add this to your user transformer to add social auth fields to yo
   Google: [https://console.developers.google.com/apis/credentials](https://console.developers.google.com/apis/credentials)
 
 For the callback URL you can use this Apiato web endpoint `http://apiato.test/auth/{provider}/callback` *(replace the
-provider with any of the supported providers `facebook`, `twitter`,..)*.
+provider with any of the supported providers `facebook`, `twitter`,...)*.
 
-2) Set the Tokens and Secrets in the `.env` file
+2) For any supported provider you want to use, set Tokens and Secrets in the `.env`
+```
+AUTH_FACEBOOK_CLIENT_ID=
+AUTH_FACEBOOK_CLIENT_SECRET=
+AUTH_FACEBOOK_CLIENT_REDIRECT=
 
-```php
-    'facebook' => [
-        'client_id'     => env('AUTH_FACEBOOK_CLIENT_ID'), // App ID
-        'client_secret' => env('AUTH_FACEBOOK_CLIENT_SECRET'), // App Secret
-        'redirect'      => env('AUTH_FACEBOOK_CLIENT_REDIRECT'),
-    ],
+AUTH_TWITTER_CLIENT_ID=
+AUTH_TWITTER_CLIENT_SECRET=
+AUTH_TWITTER_CLIENT_REDIRECT=
 
-    'twitter' => [
-        'client_id'     => env('AUTH_TWITTER_CLIENT_ID'), // Consumer Key (API Key)
-        'client_secret' => env('AUTH_TWITTER_CLIENT_SECRET'), // Consumer Secret (API Secret)
-        'redirect'      => env('AUTH_TWITTER_CLIENT_REDIRECT'),
-    ],
-
-    'google' => [
-        'client_id'     => env('AUTH_GOOGLE_CLIENT_ID'), // Client ID
-        'client_secret' => env('AUTH_GOOGLE_CLIENT_SECRET'), // Client secret
-        'redirect'      => env('AUTH_GOOGLE_CLIENT_REDIRECT'),
-    ],
+AUTH_GOOGLE_CLIENT_ID=
+AUTH_GOOGLE_CLIENT_SECRET=
+AUTH_GOOGLE_CLIENT_REDIRECT=
 ```
 
 3) Make a request from your client to get the `oauth` info. **Each Social provider returns different response and keys**
@@ -101,15 +96,15 @@ Example Twitter Response:
 
 ```text
 User {
-  tokentoken: "121212121-121212121"
-  tokentokenSecret: "34343434343434343343434343"
-  tokenid: "777777777"
-  tokennickname: "Mahmoud_Zalt"
-  tokenname: "Mahmoud Zalt"
+  tokentoken: "1212"
+  tokentokenSecret: "3434"
+  tokenid: "777"
+  tokennickname: "John_Doe"
+  tokenname: "John Doe"
   tokenemail: null
-  tokenavatar: "http://pbs.twimg.com/profile_images/88888888/PENrcePC_normal.jpg"
+  tokenavatar: "http://pbs.twimg.com/images/888/PENrcePC.jpg"
   tokenuser:
-  token"avatar_original": "http://pbs.twimg.com/profile_images/9999999/PENrcePC.jpg"
+  token"avatar_original": "http://pbs.twimg.com/images/999/PENrcePC.jpg"
 }
 ```
 
@@ -126,7 +121,7 @@ Host: api.apiato.test
 Content-Type: application/x-www-form-urlencoded
 Accept: application/json
 
-oauth_token=121212121-121212121&oauth_secret=34343434343434343343434343
+oauth_token=1212&oauth_secret=3434
 ```
 
 Note: For Facebook send only the `oauth_token` which is named as `access_token` in the facebook response. For more
@@ -142,8 +137,8 @@ Example Twitter Response:
     "data": {
         "object": "User",
         "id": "YJ5evQ20Jyzx68dK",
-        "name": "Mohammad Alavi",
-        "email": "mohammad.alavi1990@gmail.com",
+        "name": "John Doe",
+        "email": "john.doe@test.com",
         "confirmed": null,
         "nickname": null,
         "gender": null,
@@ -151,8 +146,8 @@ Example Twitter Response:
         "social_auth_provider": "google",
         "social_id": "113834952367767922133",
         "social_avatar": {
-            "avatar": "https:\/\/lh6.googleusercontent.com\/-OSItz6IHbSw\/AAAAAAAAAAI\/AAAAAAAAAAA\/AMZuucltEs_yNz42qhe1FCJmhG4cm5m-_A\/s96-c\/photo.jpg",
-            "original": "https:\/\/lh6.googleusercontent.com\/-OSItz6IHbSw\/AAAAAAAAAAI\/AAAAAAAAAAA\/AMZuucltEs_yNz42qhe1FCJmhG4cm5m-_A\/s96-c\/photo.jpg"
+            "avatar": "https:\/\/lh6.googleusercontent.com\/-OSItz6IHbSw\/AAA\/AMZuucltEs\/s96-c\/photo.jpg",
+            "original": "https:\/\/lh6.googleusercontent.com\/-OSItz6IHbSw\/AAA\/AMZuucltEs\/s96-c\/photo.jpg",
         },
         "created_at": "2021-03-31T06:37:28.000000Z",
         "updated_at": "2021-03-31T06:37:28.000000Z",
@@ -165,7 +160,7 @@ Example Twitter Response:
         ],
         "custom": {
             "token_type": "personal",
-            "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDE1YmY3ZTNmNWNkNWMzYzc4MDEyMjg1YWJmOTc0OWYyY2U1MDA2N2RkMzRkNGMzNDg5MDc5YTcyN2IwM2I4MzVhYjk4NGYzNTA1NWI5ZWQiLCJpYXQiOjE2MTcxNzI2NDkuMDM1NjI2LCJuYmYiOjE2MTcxNzI2NDkuMDM1NjMzLCJleHAiOjE2NDg3MDg2NDkuMDA3NjY2LCJzdWIiOiI3OSIsInNjb3BlcyI6W119.RBX2_q2SEyMBjk7-LKnZ1aLbvpGPbWvF20M5Ti2CGXX8Jj_QPev7VOWEJOTQ826FOraGvEl2fJn7y2qo-1mTk0Jm_ut_4M03sz0dRsi-DnS7ifupvlzKL6epUoI6Nt_2wmuT6jMx1Z2SpcqEOwVxchca2phi2juo5hLdEkN65lw0w7l3mhvWtOHkF1jqyNTlMRXBKrdna56YTRupbG5ye5wWh7g0FsQgJpPZEXtH3zP_dp-UUguTAzNDUBG6PDk7_Mts4pMH1JX4gARm0tEyOU9fXVSVF8Ewk_uKlxtoDbod6FZMct6A5zQuVsXf5P2rVxOaIjEb5neFSjJyQAHZcTBdPmMGCx-UDk14ARZQlPjogpuiEOcNL-xJqqkndlmEPWYUtuy0MfI1qzdrkt69QvmCOx7L8J8o9EXlfmZdbpZKtQ0BXW_7ZyweNdJq5x6zR0FZsHMC3A_PV9zzgK43tciA2fxbcWixXC8uP-BvUyv1tdvYtLTtGo-_edVQMIA-8tDqmJfqKx18A7jW75t4yQZlNXq6gEos9q3etfK0KNg3Nys-mYG7Z0RhrafYCNx53qipJ_6zroXdRo3c-ZappXeUn5pqwBse7eOvbtsIondp_uH_C0YzUUXQJPjfAv_q4PPdslvCKqCo3sHPfkzIlGoiCjp6a-rjN5Yr4I7P2pc"
+            "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9...."
         }
     }
 }
