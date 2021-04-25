@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Containers\VendorSection\SocialAuth\Tasks;
+namespace App\Containers\Vendor\SocialAuth\Tasks;
 
 use App\Containers\User\Data\Repositories\UserRepository;
 use App\Ship\Exceptions\UpdateResourceFailedException;

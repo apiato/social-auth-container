@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Containers\VendorSection\SocialAuth\Exceptions;
+namespace App\Containers\Vendor\SocialAuth\Exceptions;
 
 use App\Ship\Parents\Exceptions\Exception;
 use Symfony\Component\HttpFoundation\Response;

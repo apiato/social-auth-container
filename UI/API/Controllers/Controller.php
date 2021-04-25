@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Containers\VendorSection\SocialAuth\UI\API\Controllers;
+namespace App\Containers\Vendor\SocialAuth\UI\API\Controllers;
 
 use App\Containers\User\UI\API\Transformers\UserTransformer;
-use App\Containers\VendorSection\SocialAuth\Actions\SocialLoginAction;
-use App\Containers\VendorSection\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
+use App\Containers\Vendor\SocialAuth\Actions\SocialLoginAction;
+use App\Containers\Vendor\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
 use App\Ship\Parents\Controllers\ApiController;
 
 class Controller extends ApiController

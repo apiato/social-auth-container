@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Containers\VendorSection\SocialAuth\Tasks;
+namespace App\Containers\Vendor\SocialAuth\Tasks;
 
 use App\Containers\AppSection\User\Models\User;
 use App\Ship\Parents\Tasks\Task;

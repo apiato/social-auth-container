@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Containers\VendorSection\SocialAuth\Actions;
+namespace App\Containers\Vendor\SocialAuth\Actions;
 
-use App\Containers\VendorSection\SocialAuth\Tasks\ApiLoginFromUserTask;
-use App\Containers\VendorSection\SocialAuth\Tasks\CreateUserBySocialProfileTask;
-use App\Containers\VendorSection\SocialAuth\Tasks\FindSocialUserTask;
-use App\Containers\VendorSection\SocialAuth\Tasks\FindUserSocialProfileTask;
-use App\Containers\VendorSection\SocialAuth\Tasks\UpdateUserSocialProfileTask;
-use App\Containers\VendorSection\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
+use App\Containers\Vendor\SocialAuth\Tasks\ApiLoginFromUserTask;
+use App\Containers\Vendor\SocialAuth\Tasks\CreateUserBySocialProfileTask;
+use App\Containers\Vendor\SocialAuth\Tasks\FindSocialUserTask;
+use App\Containers\Vendor\SocialAuth\Tasks\FindUserSocialProfileTask;
+use App\Containers\Vendor\SocialAuth\Tasks\UpdateUserSocialProfileTask;
+use App\Containers\Vendor\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
 use App\Ship\Parents\Actions\Action;
 
 class SocialLoginAction extends Action
@@ -54,7 +54,7 @@ class SocialLoginAction extends Action
 		} else {
 			// THIS IS: A NEW USER
 
-			$isAdmin = config('vendorSection-socialAuth.create_new_user_as_admin');
+			$isAdmin = config('vendor-socialAuth.create_new_user_as_admin');
 
 			// DO: CREATE NEW USER FROM THE SOCIAL PROFILE INFORMATION.
 			$user = app(CreateUserBySocialProfileTask::class)->run(
