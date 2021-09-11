@@ -2,7 +2,7 @@
 
 namespace App\Containers\Vendor\SocialAuth\Tasks;
 
-use App\Containers\User\Data\Repositories\UserRepository;
+use App\Containers\AppSection\User\Data\Repositories\UserRepository;
 use App\Ship\Parents\Tasks\Task;
 
 class FindSocialUserTask extends Task
