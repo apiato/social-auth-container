@@ -51,8 +51,8 @@ class CreateUserBySocialProfileTask extends Task
 
         try {
             $user = $this->repository->create($data);
-        } catch (Exception) {
-            throw new AccountFailedException();
+        } catch (Exception $e) {
+            throw (new AccountFailedException())->debug($e);
         }
 
         return $user;
