@@ -11,7 +11,7 @@ class UpdateUserTableWithSocialauthColumns extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table(config('vendor-socialAuth.user.table_name'), function (Blueprint $table) {
             $table->string('social_provider')->nullable();
             $table->string('social_nickname')->nullable();
             $table->string('social_id')->nullable();
@@ -29,7 +29,7 @@ class UpdateUserTableWithSocialauthColumns extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table(config('vendor-socialAuth.user.table_name'), function (Blueprint $table) {
             $table->dropColumn([
                 'social_provider',
                 'social_nickname',
