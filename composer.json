@@ -19,7 +19,7 @@
         },
         "laravel": {
             "providers": [
-                "App\\Containers\\SocialAuth\\Providers\\SocialAuthServiceProvider"
+                "App\\Containers\\Vendor\\SocialAuth\\Providers\\SocialAuthServiceProvider"
             ]
         }
     }
