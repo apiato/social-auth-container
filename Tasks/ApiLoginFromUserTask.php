@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Containers\Vendor\SocialAuth\Tasks;
+namespace Apiato\Containers\SocialAuth\Tasks;
 
 use App\Containers\AppSection\User\Models\User;
-use App\Ship\Parents\Tasks\Task;
+use Apiato\Core\Abstracts\Tasks\Task;
 use Laravel\Passport\PersonalAccessTokenResult;
 
 class ApiLoginFromUserTask extends Task

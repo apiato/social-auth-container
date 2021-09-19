@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Containers\Vendor\SocialAuth\UI\API\Requests;
+namespace Apiato\Containers\SocialAuth\UI\API\Requests;
 
-use App\Ship\Parents\Requests\Request;
+use Apiato\Core\Abstracts\Requests\Request;
 
 class ApiAuthenticateRequest extends Request
 {

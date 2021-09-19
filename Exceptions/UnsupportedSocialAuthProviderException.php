@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Containers\Vendor\SocialAuth\Exceptions;
+namespace Apiato\Containers\SocialAuth\Exceptions;
 
-use App\Ship\Parents\Exceptions\Exception;
+use Apiato\Core\Abstracts\Exceptions\Exception;
 use Symfony\Component\HttpFoundation\Response;
 
 class UnsupportedSocialAuthProviderException extends Exception

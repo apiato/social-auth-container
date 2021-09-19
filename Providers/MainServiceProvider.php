@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Containers\Vendor\SocialAuth\Providers;
+namespace Apiato\Containers\SocialAuth\Providers;
 
-use App\Ship\Parents\Providers\MainProvider;
+use Apiato\Core\Abstracts\Providers\MainProvider;
 
 /**
  * Class MainServiceProvider.

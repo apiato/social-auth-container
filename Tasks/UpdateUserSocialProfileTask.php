@@ -1,20 +1,21 @@
 <?php
 
-namespace App\Containers\Vendor\SocialAuth\Tasks;
+namespace Apiato\Containers\SocialAuth\Tasks;
 
-use App\Containers\User\Data\Repositories\UserRepository;
-use App\Ship\Exceptions\UpdateResourceFailedException;
-use App\Ship\Parents\Tasks\Task;
+use Apiato\Containers\SocialAuth\Exceptions\UpdateResourceFailedException;
+use Apiato\Core\Abstracts\Tasks\Task;
+use App\Containers\AppSection\User\Data\Repositories\UserRepository;
 
 class UpdateUserSocialProfileTask extends Task
 {
-    protected UserRepository $repository;
-
-    public function __construct(UserRepository $repository)
-    {
-        $this->repository = $repository;
+    public function __construct(
+        protected UserRepository $repository
+    ) {
     }
 
+    /**
+     * @throws UpdateResourceFailedException
+     */
     public function run(
         $userId,
         $token = null,

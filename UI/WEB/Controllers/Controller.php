@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Containers\Vendor\SocialAuth\UI\WEB\Controllers;
+namespace Apiato\Containers\SocialAuth\UI\WEB\Controllers;
 
-use App\Ship\Parents\Controllers\WebController;
+use Apiato\Core\Abstracts\Controllers\WebController;
 use Laravel\Socialite\Contracts\User;
 use Laravel\Socialite\Facades\Socialite;
 use Symfony\Component\HttpFoundation\RedirectResponse;

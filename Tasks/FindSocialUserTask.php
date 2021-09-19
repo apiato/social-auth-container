@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Containers\Vendor\SocialAuth\Tasks;
+namespace Apiato\Containers\SocialAuth\Tasks;
 
-use App\Containers\User\Data\Repositories\UserRepository;
-use App\Ship\Parents\Tasks\Task;
+use App\Containers\AppSection\User\Data\Repositories\UserRepository;
+use Apiato\Core\Abstracts\Tasks\Task;
 
 class FindSocialUserTask extends Task
 {
