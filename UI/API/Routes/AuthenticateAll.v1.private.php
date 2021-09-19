@@ -2,17 +2,18 @@
 
 /**
  * @apiGroup           SocialAuth
- * @apiName            socialAuthFacebook
- * @api                {post} /v1/auth/{provider}
- * @apiDescription     After getting the User Token from facebook, call this Endpoint like this `/v1/auth/facebook`
+ * @apiName            socialAuthAll
+ * @api                {post} /v1/auth/{provider} Auth for all Providers
+ * @apiDescription     After getting the User Token from provider (e.g. google), call this Endpoint like this `/v1/auth/google`
  * passing the user token to it in order to fetch his data and create the user in our
  * database if not exist or return the existing one.
- * For testing purposes use this endpoint `auth/facebook` to get the token.
+ * For testing purposes use this endpoint `auth/google` to get the token.
  *
  * @apiVersion         1.0.0
  * @apiPermission      none
  *
- * @apiParam           oauth_token
+ * @apiParam           oauth_token  token provided by the social provider
+ * @apiParam           [oauth_secret] some providers like Twitter provide this
  *
  * @apiSuccessExample  {json}    Success-Response:
 HTTP/1.1 200 OK

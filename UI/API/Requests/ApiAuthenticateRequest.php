@@ -10,8 +10,8 @@ class ApiAuthenticateRequest extends Request
 	 * Define which Roles and/or Permissions has access to this request.
 	 */
 	protected array $access = [
-		'permissions' => null,
-		'roles' => null,
+		'permissions' => '',
+		'roles' => '',
 	];
 
 	/**
@@ -35,7 +35,7 @@ class ApiAuthenticateRequest extends Request
 	public function rules(): array
 	{
 		return [
-
+            'oauth_token' => 'required'
 		];
 	}
 
