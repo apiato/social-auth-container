@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Containers\SocialAuth\Providers;
+namespace App\Containers\Vendor\SocialAuth\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

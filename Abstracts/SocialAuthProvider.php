@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Containers\SocialAuth\Abstracts;
+namespace App\Containers\Vendor\SocialAuth\Abstracts;
 
-use App\Containers\SocialAuth\Contracts\SocialAuthProvider as SocialAuthProviderContract;
-use App\Containers\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
+use App\Containers\Vendor\SocialAuth\Contracts\SocialAuthProvider as SocialAuthProviderContract;
+use App\Containers\Vendor\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
 use Laravel\Socialite\Facades\Socialite;
 
 abstract class SocialAuthProvider implements SocialAuthProviderContract

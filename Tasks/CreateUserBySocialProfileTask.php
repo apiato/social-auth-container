@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Containers\SocialAuth\Tasks;
+namespace App\Containers\Vendor\SocialAuth\Tasks;
 
-use App\Containers\SocialAuth\Exceptions\AccountFailedException;
+use App\Containers\Vendor\SocialAuth\Exceptions\AccountFailedException;
 use App\Containers\AppSection\User\Data\Repositories\UserRepository;
 use Apiato\Core\Abstracts\Tasks\Task;
 use Exception;

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Containers\SocialAuth\Actions;
+namespace App\Containers\Vendor\SocialAuth\Actions;
 
 use Apiato\Core\Abstracts\Actions\SubAction;
-use App\Containers\SocialAuth\Abstracts\SocialAuthProvider;
-use App\Containers\SocialAuth\Exceptions\UnsupportedSocialAuthProviderException;
-use App\Containers\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
+use App\Containers\Vendor\SocialAuth\Abstracts\SocialAuthProvider;
+use App\Containers\Vendor\SocialAuth\Exceptions\UnsupportedSocialAuthProviderException;
+use App\Containers\Vendor\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
 
 class GetSocialAuthProviderInstanceSubAction extends SubAction
 {

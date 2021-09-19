@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Containers\SocialAuth\Actions;
+namespace App\Containers\Vendor\SocialAuth\Actions;
 
 use Apiato\Core\Abstracts\Actions\Action;
-use App\Containers\SocialAuth\Tasks\ApiLoginFromUserTask;
-use App\Containers\SocialAuth\Tasks\CreateUserBySocialProfileTask;
-use App\Containers\SocialAuth\Tasks\FindSocialUserTask;
-use App\Containers\SocialAuth\Tasks\FindUserSocialProfileTask;
-use App\Containers\SocialAuth\Tasks\UpdateUserSocialProfileTask;
-use App\Containers\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
+use App\Containers\Vendor\SocialAuth\Tasks\ApiLoginFromUserTask;
+use App\Containers\Vendor\SocialAuth\Tasks\CreateUserBySocialProfileTask;
+use App\Containers\Vendor\SocialAuth\Tasks\FindSocialUserTask;
+use App\Containers\Vendor\SocialAuth\Tasks\FindUserSocialProfileTask;
+use App\Containers\Vendor\SocialAuth\Tasks\UpdateUserSocialProfileTask;
+use App\Containers\Vendor\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
 
 class SocialLoginAction extends Action
 {

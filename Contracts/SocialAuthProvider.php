@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Containers\SocialAuth\Contracts;
+namespace App\Containers\Vendor\SocialAuth\Contracts;
 
 interface SocialAuthProvider
 {

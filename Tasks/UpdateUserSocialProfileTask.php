@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Containers\SocialAuth\Tasks;
+namespace App\Containers\Vendor\SocialAuth\Tasks;
 
-use App\Containers\SocialAuth\Exceptions\UpdateResourceFailedException;
+use App\Containers\Vendor\SocialAuth\Exceptions\UpdateResourceFailedException;
 use Apiato\Core\Abstracts\Tasks\Task;
 use App\Containers\AppSection\User\Data\Repositories\UserRepository;
 

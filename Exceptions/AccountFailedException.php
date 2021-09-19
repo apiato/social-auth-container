@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Containers\SocialAuth\Exceptions;
+namespace App\Containers\Vendor\SocialAuth\Exceptions;
 
 use Apiato\Core\Abstracts\Exceptions\Exception;
 use Symfony\Component\HttpFoundation\Response;
