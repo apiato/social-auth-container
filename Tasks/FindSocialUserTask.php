@@ -2,16 +2,15 @@
 
 namespace App\Containers\Vendor\SocialAuth\Tasks;
 
-use App\Containers\AppSection\User\Data\Repositories\UserRepository;
 use Apiato\Core\Abstracts\Tasks\Task;
 
 class FindSocialUserTask extends Task
 {
-    protected UserRepository $repository;
+    private mixed $repository;
 
-    public function __construct(UserRepository $repository)
+    public function __construct()
     {
-        $this->repository = $repository;
+        $this->repository = app(config('vendor-socialAuth.user.repository'));
     }
 
     public function run($socialProvider, $socialId)

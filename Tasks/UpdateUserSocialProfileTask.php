@@ -4,13 +4,14 @@ namespace App\Containers\Vendor\SocialAuth\Tasks;
 
 use App\Containers\Vendor\SocialAuth\Exceptions\UpdateResourceFailedException;
 use Apiato\Core\Abstracts\Tasks\Task;
-use App\Containers\AppSection\User\Data\Repositories\UserRepository;
 
 class UpdateUserSocialProfileTask extends Task
 {
-    public function __construct(
-        protected UserRepository $repository
-    ) {
+    private mixed $repository;
+
+    public function __construct()
+    {
+        $this->repository = app(config('vendor-socialAuth.user.repository'));
     }
 
     /**

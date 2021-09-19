@@ -3,19 +3,22 @@
 namespace App\Containers\Vendor\SocialAuth\Tasks;
 
 use App\Containers\Vendor\SocialAuth\Exceptions\AccountFailedException;
-use App\Containers\AppSection\User\Data\Repositories\UserRepository;
 use Apiato\Core\Abstracts\Tasks\Task;
 use Exception;
 
 class CreateUserBySocialProfileTask extends Task
 {
-    protected UserRepository $repository;
+    private mixed $repository;
 
-    public function __construct(UserRepository $repository)
+    public function __construct()
     {
-        $this->repository = $repository;
+        $this->repository = app(config('vendor-socialAuth.user.repository'));
     }
 
+    /**
+     * @throws Exception
+     * @throws AccountFailedException
+     */
     public function run(
         $provider,
         $token = null,
@@ -48,8 +51,8 @@ class CreateUserBySocialProfileTask extends Task
 
         try {
             $user = $this->repository->create($data);
-        } catch (Exception $e) {
-            throw (new AccountFailedException())->debug($e);
+        } catch (Exception) {
+            throw new AccountFailedException();
         }
 
         return $user;
