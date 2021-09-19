@@ -1,6 +1,6 @@
 <?php
 
-use Apiato\Containers\SocialAuth\UI\WEB\Controllers\Controller;
+use App\Containers\SocialAuth\UI\WEB\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 // provider callback handler

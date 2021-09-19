@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Containers\SocialAuth\UI\WEB\Controllers;
+namespace App\Containers\SocialAuth\UI\WEB\Controllers;
 
 use Apiato\Core\Abstracts\Controllers\WebController;
 use Laravel\Socialite\Contracts\User;

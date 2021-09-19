@@ -19,13 +19,8 @@
         },
         "laravel": {
             "providers": [
-                "Apiato\\Containers\\SocialAuth\\Providers\\SocialAuthServiceProvider"
+                "App\\Containers\\SocialAuth\\Providers\\SocialAuthServiceProvider"
             ]
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "Apiato\\Containers\\SocialAuth\\": ""
         }
     }
 }

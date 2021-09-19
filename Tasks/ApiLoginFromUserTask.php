@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Containers\SocialAuth\Tasks;
+namespace App\Containers\SocialAuth\Tasks;
 
 use App\Containers\AppSection\User\Models\User;
 use Apiato\Core\Abstracts\Tasks\Task;

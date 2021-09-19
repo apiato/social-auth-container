@@ -1,10 +1,10 @@
 <?php
 
-namespace Apiato\Containers\SocialAuth\UI\API\Controllers;
+namespace App\Containers\SocialAuth\UI\API\Controllers;
 
 use App\Containers\AppSection\User\UI\API\Transformers\UserTransformer;
-use Apiato\Containers\SocialAuth\Actions\SocialLoginAction;
-use Apiato\Containers\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
+use App\Containers\SocialAuth\Actions\SocialLoginAction;
+use App\Containers\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
 use Apiato\Core\Abstracts\Controllers\ApiController;
 
 class Controller extends ApiController

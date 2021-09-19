@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Containers\SocialAuth\UI\API\Requests;
+namespace App\Containers\SocialAuth\UI\API\Requests;
 
 use Apiato\Core\Abstracts\Requests\Request;
 

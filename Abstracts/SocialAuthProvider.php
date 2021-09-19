@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Containers\SocialAuth\Abstracts;
+namespace App\Containers\SocialAuth\Abstracts;
 
-use Apiato\Containers\SocialAuth\Contracts\SocialAuthProvider as SocialAuthProviderContract;
-use Apiato\Containers\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
+use App\Containers\SocialAuth\Contracts\SocialAuthProvider as SocialAuthProviderContract;
+use App\Containers\SocialAuth\UI\API\Requests\ApiAuthenticateRequest;
 use Laravel\Socialite\Facades\Socialite;
 
 abstract class SocialAuthProvider implements SocialAuthProviderContract

@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Containers\SocialAuth\Contracts;
+namespace App\Containers\SocialAuth\Contracts;
 
 interface SocialAuthProvider
 {

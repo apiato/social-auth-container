@@ -1,8 +1,8 @@
 <?php
 
-namespace Apiato\Containers\SocialAuth\SocialAuthProviders;
+namespace App\Containers\SocialAuth\SocialAuthProviders;
 
-use Apiato\Containers\SocialAuth\Abstracts\SocialAuthProvider;
+use App\Containers\SocialAuth\Abstracts\SocialAuthProvider;
 
 class FacebookSocialAuthProvider extends SocialAuthProvider
 {

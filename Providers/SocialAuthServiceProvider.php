@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Containers\SocialAuth\Providers;
+namespace App\Containers\SocialAuth\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
