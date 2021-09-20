@@ -2,9 +2,9 @@
 
 /**
  * @apiGroup           SocialAuth
- * @apiName            socialAuthAll
- * @api                {post} /v1/auth/{provider} Auth for all Providers
- * @apiDescription     Test endpoint to get the social auth token
+ * @apiName            socialAuthRedirect
+ * @api                {get} /v1/auth/{provider}/redirect Auth Redirect
+ * @apiDescription     Redirects the user to the OAuth provider
  *
  * @apiVersion         1.0.0
  * @apiPermission      none
@@ -14,6 +14,6 @@
 use App\Containers\Vendor\SocialAuth\UI\WEB\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
-Route::post('auth/{provider}', [Controller::class, 'redirectAll'])
+Route::get('auth/{provider}/redirect', [Controller::class, 'redirect'])
     ->name('web_socialAuth_redirect');
 

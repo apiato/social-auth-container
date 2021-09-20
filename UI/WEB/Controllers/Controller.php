@@ -9,12 +9,12 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class Controller extends WebController
 {
-    public function redirectAll($provider): RedirectResponse
+    public function redirect($provider): RedirectResponse
     {
         return Socialite::driver($provider)->redirect();
     }
 
-    public function handleCallbackAll($provider): User
+    public function callback($provider): User
     {
         return Socialite::driver($provider)->user();
     }
