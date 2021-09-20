@@ -3,7 +3,6 @@
 namespace App\Containers\Vendor\SocialAuth\UI\WEB\Controllers;
 
 use Apiato\Core\Abstracts\Controllers\WebController;
-use Laravel\Socialite\Contracts\User;
 use Laravel\Socialite\Facades\Socialite;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
@@ -14,8 +13,10 @@ class Controller extends WebController
         return Socialite::driver($provider)->redirect();
     }
 
-    public function callback($provider): User
+    public function callback($provider): string
     {
-        return Socialite::driver($provider)->user();
+        $user = Socialite::driver($provider)->user();
+
+        return $user->getEmail();
     }
 }
