@@ -21,6 +21,6 @@ return [
     'user' => [
         'repository' => App\Containers\AppSection\User\Data\Repositories\UserRepository::class,
         'transformer' => App\Containers\AppSection\User\UI\API\Transformers\UserTransformer::class,
-        'table_name' => 'users'
-    ]
+        'table_name' => 'users',
+    ],
 ];
