@@ -2,7 +2,7 @@
 
 namespace App\Containers\Vendor\SocialAuth\Providers;
 
-use Apiato\Core\Abstracts\Providers\MainProvider;
+use Apiato\Core\Abstracts\Providers\MainServiceProvider as ParentServiceProvider;
 
 /**
  * Class MainServiceProvider.
@@ -11,7 +11,7 @@ use Apiato\Core\Abstracts\Providers\MainProvider;
  *
  * @author  Mahmoud Zalt <mahmoud@zalt.me>
  */
-class MainServiceProvider extends MainProvider
+class MainServiceProvider extends ParentServiceProvider
 {
     /**
      * Container Service Providers.
