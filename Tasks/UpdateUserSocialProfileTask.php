@@ -2,8 +2,8 @@
 
 namespace App\Containers\Vendor\SocialAuth\Tasks;
 
-use App\Containers\Vendor\SocialAuth\Exceptions\UpdateResourceFailedException;
 use Apiato\Core\Abstracts\Tasks\Task;
+use App\Containers\Vendor\SocialAuth\Exceptions\UpdateResourceFailedException;
 
 class UpdateUserSocialProfileTask extends Task
 {
@@ -30,8 +30,7 @@ class UpdateUserSocialProfileTask extends Task
         $nickname = null,
         $name = null,
         $email = null
-    )
-    {
+    ) {
         $attributes = [];
 
         if ($token) {
@@ -82,6 +81,9 @@ class UpdateUserSocialProfileTask extends Task
             throw new UpdateResourceFailedException('Inputs are empty.');
         }
 
-        return $this->repository->update($attributes, $userId);
+        $user = $this->repository->update($attributes, $userId);
+        $user->markEmailAsVerified();
+
+        return $user;
     }
 }
