@@ -49,8 +49,17 @@ class CreateUserBySocialProfileTask extends Task
         ];
 
         try {
-            $user = $this->repository->create($data);
-            $user->markEmailAsVerified();
+            $registeredUser = $this->repository->findByField('email', $data['email'])->first();
+
+            if ($registeredUser) {
+                $user = $this->repository->update($data, $registeredUser->id);
+            } else {
+                $user = $this->repository->create($data);
+            }
+
+            if (!$user->hasVerifiedEmail()) {
+                $user->markEmailAsVerified();
+            }
         } catch (Exception) {
             throw (new AccountFailedException());
         }

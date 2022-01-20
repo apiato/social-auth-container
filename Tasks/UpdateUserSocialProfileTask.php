@@ -82,7 +82,9 @@ class UpdateUserSocialProfileTask extends Task
         }
 
         $user = $this->repository->update($attributes, $userId);
-        $user->markEmailAsVerified();
+        if (!$user->hasVerifiedEmail()) {
+            $user->markEmailAsVerified();
+        }
 
         return $user;
     }
