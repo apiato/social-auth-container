@@ -4,7 +4,7 @@
     "type": "apiato-container",
     "require": {
         "laravel/socialite": "^5.5.2",
-        "apiato/core": "v7.0.0-alpha.1",
+        "apiato/core": "^v7.0.0-rc.1",
         "lcobucci/clock": "2.1.0"
     },
     "require-dev": {
