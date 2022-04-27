@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e1168c6e73dd9ba9b8ef6b69ae797b10",
+    "content-hash": "43edf9069584e16dbcdb8c14e986d71a",
     "packages": [
         {
             "name": "apiato/container-installer",
@@ -45,16 +45,16 @@
         },
         {
             "name": "apiato/core",
-            "version": "v7.0.0-rc.1",
+            "version": "v7.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/apiato/core.git",
-                "reference": "c4801856f8280abc765ae8e5c2c9c54582d051fc"
+                "reference": "1a3c7bf67fc1727c2ce90c0a37b54ccb5f7d66d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/apiato/core/zipball/c4801856f8280abc765ae8e5c2c9c54582d051fc",
-                "reference": "c4801856f8280abc765ae8e5c2c9c54582d051fc",
+                "url": "https://api.github.com/repos/apiato/core/zipball/1a3c7bf67fc1727c2ce90c0a37b54ccb5f7d66d6",
+                "reference": "1a3c7bf67fc1727c2ce90c0a37b54ccb5f7d66d6",
                 "shasum": ""
             },
             "require": {
@@ -122,7 +122,7 @@
                 "issues": "https://github.com/apiato/core/issues",
                 "source": "https://github.com/apiato/core"
             },
-            "time": "2022-04-23T16:34:27+00:00"
+            "time": "2022-04-27T15:01:27+00:00"
         },
         {
             "name": "brick/math",
@@ -1276,16 +1276,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.9.0",
+            "version": "v9.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "4d5a07640891b772188d7737348886a0222737d8"
+                "reference": "ef2a61ad1e6f1b7ce613675217e25a51c821f826"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/4d5a07640891b772188d7737348886a0222737d8",
-                "reference": "4d5a07640891b772188d7737348886a0222737d8",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ef2a61ad1e6f1b7ce613675217e25a51c821f826",
+                "reference": "ef2a61ad1e6f1b7ce613675217e25a51c821f826",
                 "shasum": ""
             },
             "require": {
@@ -1451,7 +1451,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-04-19T15:01:23+00:00"
+            "time": "2022-04-27T14:07:25+00:00"
         },
         {
             "name": "laravel/passport",
@@ -2036,16 +2036,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "3.0.17",
+            "version": "3.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "29eb78cac0be0c22237c5e0f6f98234d97037d79"
+                "reference": "c8e137e594948240b03372e012344b07c61b9193"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/29eb78cac0be0c22237c5e0f6f98234d97037d79",
-                "reference": "29eb78cac0be0c22237c5e0f6f98234d97037d79",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/c8e137e594948240b03372e012344b07c61b9193",
+                "reference": "c8e137e594948240b03372e012344b07c61b9193",
                 "shasum": ""
             },
             "require": {
@@ -2106,7 +2106,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/3.0.17"
+                "source": "https://github.com/thephpleague/flysystem/tree/3.0.18"
             },
             "funding": [
                 {
@@ -2122,7 +2122,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-14T14:57:13+00:00"
+            "time": "2022-04-25T18:55:04+00:00"
         },
         {
             "name": "league/fractal",
@@ -6772,12 +6772,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "e5e096c731d21614b952983804581389eb2a484f"
+                "reference": "f9837ae1f1830a09d71f5132112dcc9ed3ef9c65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e5e096c731d21614b952983804581389eb2a484f",
-                "reference": "e5e096c731d21614b952983804581389eb2a484f",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/f9837ae1f1830a09d71f5132112dcc9ed3ef9c65",
+                "reference": "f9837ae1f1830a09d71f5132112dcc9ed3ef9c65",
                 "shasum": ""
             },
             "conflict": {
@@ -6836,6 +6836,7 @@
                 "craftcms/cms": "<3.7.29",
                 "croogo/croogo": "<3.0.7",
                 "cuyz/valinor": ">=0.5,<0.7",
+                "czproject/git-php": "<4.0.3",
                 "datadog/dd-trace": ">=0.30,<0.30.2",
                 "david-garcia/phpwhois": "<=4.3.1",
                 "derhansen/sf_event_mgt": "<4.3.1|>=5,<5.1.1",
@@ -7247,13 +7248,12 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-22T22:04:12+00:00"
+            "time": "2022-04-27T15:08:54+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "apiato/core": 5,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
